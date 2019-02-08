@@ -1,3 +1,5 @@
+//reduce faz a soma dos valores
+
 const alunos = [
   {nome: 'Joao', nota: 7.3, bolsista: false},
   {nome: 'Maria', nota: 9.2, bolsista: true},
