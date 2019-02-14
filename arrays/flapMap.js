@@ -39,3 +39,12 @@ const nome1 = escola.map(getNomeTurma)
 
 console.log(nome1)
 console.log(nota1)
+
+console.log([].concat([1,2,3], [4,5,6]))
+
+Array.prototype.flapmap = function(callback){
+  return Array.prototype.concat.apply([], this.map(callback)) 
+}
+
+const notas2 = escola.flapmap(getNotaTurma)
+console.log(notas2)
