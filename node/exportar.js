@@ -18,3 +18,5 @@ console.log(module.exports)
 
 //atribuir objeto a ser exportado, usar module.exports
 module.exports = {publico: true}
+
+
