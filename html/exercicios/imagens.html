@@ -1,0 +1,83 @@
+<div wm-slider>
+<p>
+    <img src="imgs/f35.jpg" alt="f-35 caça" width="513" height="342" title="Muro de berlin">
+</p>
+
+<p class="circular">
+    <img src="imgs/j20.jpg" alt="caça j20" height="350">
+</p>
+
+
+
+<p class="cidade">
+</p>
+
+<p>
+    <picture>
+        <source srcset="imgs/marinha.jpg" media="(min-width:600px)">
+            <img src="imgs/su57.jpg" alt="su 57" width="500px" height="200px">
+    </picture>
+</p>
+
+</div>
+
+
+<style>
+.circular{
+    width: 513px;
+    background-color: #444; 
+}
+
+.cidade{
+    width: 513px;
+    height: 342px;
+    background-image: url("imgs/f18.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+</style>
+<script>
+function mover(elem, inicio, fim, passo, callback){
+    const novoInicio = inicio - passo
+    if(novoInicio >= fim){
+        elem.style.left = novoInicio + 'px'
+        setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+    } else{
+        callback()
+    }
+
+    const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+    mover(p, 1500, -400, 5, () => {
+        console.log('Terminou!!!')
+    })
+}
+
+function slider(){
+    const elementos = document.querySelectorAll('[wm-slider] > p')
+    const slides = Array.from(elementos)
+    exibirSlide(slides, slides[0])
+}
+
+function exibirSlide(slides, slide){
+    slide.style.display = 'block'
+
+    const inicio = innerWidth
+    const fim = -slide.clientWidht
+
+    slide.style.left = `${inicio}px`
+
+    mover(slide, inicio, fim, 5, () => {
+        slide.style.display = 'none'
+        exibirSlide(slides, getProximo(slides, slide))
+    })
+}
+
+function getProximo(lista, atual){
+    const i = lista.indexOf(atual) +1
+    return i < lista.lenght ? lista[i] : lista[0]
+}
+
+slider()
+</script>
