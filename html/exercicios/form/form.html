@@ -1,0 +1,33 @@
+<h1>Formulário</h1>
+
+<form method="POST">
+  <input type="hidden" name="id" value="3">
+  <label for="nome">Nome:</label>
+  <input type="text" name="nome" />
+  <br />
+
+  <label for="senha">Senha:</label>
+  <input type="password" name="senha" />
+  <br />
+
+  <label for="bio">Conte sobre você:</label><br />
+  <textarea name="bio" cols="30" rows="10"></textarea><br />
+
+  <label for="">oque vc é?</label>
+  <input type="radio" name="sexo" value="boy" /> Homem
+  <input type="radio" name="sexo" value="girl" /> Mulher<br />
+
+  <label for="">Esta ativo?</label>
+  <input type="checkbox" name="ativo" /> Ativo<br />
+
+  <label for="estado">Regiao:</label>
+  <select name="estado">
+    <option value="norte">Norte</option>
+    <option value="nordeste">Nordeste</option>
+    <option value="centro-oeste">Centro-Oeste</option>
+    <option value="sudeste">Sudeste</option>
+    <option value="sul">Sul</option> </select
+  ><br />
+  <button formaction="http://localhost:3003/usuarios">Incluir</button>
+  <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+</form>
