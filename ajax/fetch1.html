@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE html>  
+<html>  
 <head>
     <meta charset='UTF-8'>
     <title>Fetch API #01</title>
@@ -11,6 +10,27 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
-    </script>
-</body>
+            const url = 'dados/estados.json'
+            fetch(url)
+                .then(resp => resp.json()) //retorna uma promise
+                .then(estados => { //estados array de objetos
+                    console.log(estados)
+
+                    const itens = estados.reduce(
+                        (html, estado) => html + `<li>${estado.nome}</li>`, ''
+                    )
+
+                    console.log(itens)
+                    document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+                })
+                
+            fetch(url)
+                .then(resp => resp.json())
+                .then(estado => {
+                    const items = estado.reduce(
+                        (html, estado) => html + `<li>${estado.sigla}</li>`, ''
+                    )
+                    document.body.insertAdjacentHTML('beforeend', `<ul>${items}</ul>`)
+                })
+        </script>
+    </body>
