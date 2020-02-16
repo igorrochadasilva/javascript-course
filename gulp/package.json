@@ -12,7 +12,11 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-preset-env": "1.6.1",
+<<<<<<< HEAD
     "gulp": "3.9.1",
+=======
+    "gulp": "^4.0.2",
+>>>>>>> 5aec32074494d92d12184608cca9139d72b2c95f
     "gulp-babel": "7.0.1",
     "gulp-concat": "2.6.1",
     "gulp-sass": "4.0.1",
